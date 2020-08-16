@@ -46,7 +46,7 @@ class TwitterBot:
             for link in links:
                 url  = link.get_attribute('href')
                 # filter usernames
-                if re.search('/realCyclenerd/', url): continue
+                if re.search('/realCyclenerd/', url): continue # skip own tweets
                 if re.search('/GCPcloud/', url): continue
                 if re.search('/SAP', url, re.IGNORECASE): continue
                 if re.search('/Google', url, re.IGNORECASE): continue
@@ -89,7 +89,9 @@ class TwitterBot:
         profile = bot.find_element_by_css_selector('[aria-label="Profile"]').click()
 
 # get command line parameters
-parser = argparse.ArgumentParser(description='Twitter Bot powered by Selenium')
+parser = argparse.ArgumentParser(
+    description='Twitter Bot : Spread a few hearts for tweets with your chosen hashtag',
+    epilog="Powerd by Python and Selenium")
 parser.add_argument('--email', required=True, help='Twitter username or email')
 parser.add_argument('--password', required=True, help='Twitter password')
 parser.add_argument('--hashtag', required=True, help='Hashtag without #')
