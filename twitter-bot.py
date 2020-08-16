@@ -91,7 +91,7 @@ class TwitterBot:
 # get command line parameters
 parser = argparse.ArgumentParser(
     description='Twitter Bot : Spread a few hearts for tweets with your chosen hashtag',
-    epilog="Powerd by Python and Selenium")
+    epilog="Powered by Selenium with Python")
 parser.add_argument('--email', required=True, help='Twitter username or email')
 parser.add_argument('--password', required=True, help='Twitter password')
 parser.add_argument('--hashtag', required=True, help='Hashtag without #')
